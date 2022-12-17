@@ -60,8 +60,9 @@ class _HomePageState extends State<HomePage> {
                       ElevatedButton(
                           child: const Text("Logout"),
                           onPressed: () {
+                            // AuthService().signOut();
                             FirebaseAuth.instance.signOut().then((value) =>
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
@@ -107,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                       NetworkImage(shopsDetails[index].image),
                                   fit: BoxFit.cover)
                               : const DecorationImage(
-                                  image: AssetImage('images/img.jpg'),
+                                  image: AssetImage('images/book_shop.jpg'),
                                   fit: BoxFit.cover,
                                 ),
                         ),
